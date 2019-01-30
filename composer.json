@@ -1,0 +1,38 @@
+{
+    "name": "coisa/wallet",
+    "description": "Common interface for Wallets",
+    "keywords": ["wallet","financial","currency"],
+    "homepage": "https://github.com/coisa/wallet",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Felipe Sayão Lobato Abreu",
+            "email": "github@felipeabreu.com.br"
+        }
+    ],
+    "config": {
+        "sort-packages": true,
+        "prefer-stable" : true,
+        "optimize-autoloader": true
+    },
+    "scripts": {
+        "cs-check": "php-cs-fixer fix --dry-run --diff",
+        "cs-fix": "php-cs-fixer fix"
+    },
+    "require": {
+        "php": "~7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "CoiSA\\Wallet\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.14"
+    }
+}
