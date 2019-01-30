@@ -21,9 +21,11 @@ interface WalletInterface
     /**
      * The currency of the wallet
      *
-     * @return CurrencyInterface
+     * If the implementation don't rely on currencies it SHOULD return null.
+     *
+     * @return CurrencyInterface|null
      */
-    public function getCurrency(): CurrencyInterface;
+    public function getCurrency(): ?CurrencyInterface;
 
     /**
      * The current balance of this wallet
@@ -37,7 +39,7 @@ interface WalletInterface
     /**
      * Attach a transaction to the wallet
      *
-     * If a transaction have a different currency it SHOULD throw an CurrencyExceptionInterface.
+     * If a currency was provided and the transaction have a different currency it SHOULD throw an CurrencyExceptionInterface.
      *
      * @param TransactionInterface $transaction
      *
