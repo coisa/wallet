@@ -34,7 +34,10 @@ interface WalletInterface
      * The current balance of this wallet
      *
      * If this is an empty wallet with no transactions it SHOULD return
-     *   null instead of a CurrencyValueInterface.
+     *   null instead of a ValueInterface.
+     *
+     * If a currency was provided for this wallet this method SHOULD return
+     *  a CurrencyValueInterface instead.
      *
      * @return ValueInterface
      */
