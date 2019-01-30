@@ -58,4 +58,11 @@ interface WalletInterface
      * @return void
      */
     public function addTransaction(TransactionInterface $transaction): void;
+
+    /**
+     * Returns a list of attached transactions of this wallet
+     *
+     * @return \Iterator It SHOULD return only TransactionInterface for each iterated value
+     */
+    public function getTransactions(): \Iterator;
 }
