@@ -46,12 +46,16 @@ interface WalletInterface
     /**
      * Attach a transaction to the wallet
      *
-     * If a currency was provided and the transaction have a different
-     *   currency it SHOULD throw an CurrencyExceptionInterface.
+     * If no currency was provided for the wallet and the given
+     *   transaction has a currency associated, it SHOULD convert the wallet to
+     *   the same currency as the transaction.
      *
-     * If a currency was not provided for the wallet and the given
-     *   transaction has a CurrencyValueInterface it SHOULD assume that wallet
-     *   became of the same currency provided by the transaction.
+     * If a transaction with no currency associated was given, and the wallet
+     *   have a currency associated, it SHOULD convert the transaction to
+     *   the same currency as the wallet before attach.
+     *
+     * If a currency was provided for the wallet and the transaction have
+     *   a different currency it SHOULD throw an CurrencyExceptionInterface.
      *
      * @param TransactionInterface $transaction
      *
