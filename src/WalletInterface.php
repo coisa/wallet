@@ -8,6 +8,8 @@ use CoiSA\Wallet\Transaction\TransactionInterface;
 
 /**
  * Interface WalletInterface
+ *
+ * @package CoiSA\Wallet
  */
 interface WalletInterface
 {
