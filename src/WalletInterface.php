@@ -23,6 +23,7 @@ interface WalletInterface
     /**
      * The currency of the wallet
      *
+     * If you don't want use currencies, you MAY implement only ValueInterface instead.
      * If the implementation don't rely on currencies it SHOULD return null.
      *
      * @return CurrencyInterface|null
