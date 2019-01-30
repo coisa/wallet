@@ -30,7 +30,8 @@ interface WalletInterface
     /**
      * The current balance of this wallet
      *
-     * If this is an empty wallet with no transactions it SHOULD return null instead of a CurrencyValueInterface.
+     * If this is an empty wallet with no transactions it SHOULD return
+     *   null instead of a CurrencyValueInterface.
      *
      * @return ValueInterface
      */
@@ -39,11 +40,17 @@ interface WalletInterface
     /**
      * Attach a transaction to the wallet
      *
-     * If a currency was provided and the transaction have a different currency it SHOULD throw an CurrencyExceptionInterface.
+     * If a currency was provided and the transaction have a different
+     *   currency it SHOULD throw an CurrencyExceptionInterface.
+     *
+     * If not currency was provided for the wallet and the transaction
+     *   given has a CurrencyValueInterface it SHOULD assume that wallet became
+     *   of the same currency provided by the transaction.
      *
      * @param TransactionInterface $transaction
      *
-     * @throws CurrencyExceptionInterface When the given transaction not share the same currency as the wallet
+     * @throws CurrencyExceptionInterface When the given transaction not
+     *   share the same currency as the wallet
      *
      * @return void
      */
