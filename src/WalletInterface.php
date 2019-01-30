@@ -46,9 +46,9 @@ interface WalletInterface
      * If a currency was provided and the transaction have a different
      *   currency it SHOULD throw an CurrencyExceptionInterface.
      *
-     * If not currency was provided for the wallet and the transaction
-     *   given has a CurrencyValueInterface it SHOULD assume that wallet became
-     *   of the same currency provided by the transaction.
+     * If a currency was not provided for the wallet and the given
+     *   transaction has a CurrencyValueInterface it SHOULD assume that wallet
+     *   became of the same currency provided by the transaction.
      *
      * @param TransactionInterface $transaction
      *
