@@ -21,11 +21,9 @@ interface CurrencyValueInterface extends ValueInterface
     /**
      * Convert value to another currency
      *
-     * If the same currency was provided this method SHOULD return a new instance with the same values
-     *
      * @param CurrencyInterface $currency
      *
-     * @return CurrencyValueInterface
+     * @return CurrencyConvertedValueInterface
      */
-    public function convertTo(CurrencyInterface $currency): CurrencyValueInterface;
+    public function convertTo(CurrencyInterface $currency): CurrencyConvertedValueInterface;
 }
