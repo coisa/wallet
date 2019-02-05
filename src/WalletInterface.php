@@ -24,7 +24,7 @@ interface WalletInterface
      * The currency of the wallet
      *
      * If you don't want use currencies, you MAY implement only ValueInterface instead.
-     * If the implementation don't rely on currencies this method SHOULD return null.
+     * If the implementation don't rely on currencies this method MUST return null.
      *
      * @return CurrencyInterface|null
      */
@@ -33,29 +33,25 @@ interface WalletInterface
     /**
      * The current balance of this wallet
      *
-     * If this is an empty wallet with no transactions it SHOULD return
-     *   null instead of a ValueInterface.
-     *
-     * If a currency was provided for this wallet this method SHOULD return
+     * If a currency was provided for this wallet this method MUST return
      *  a CurrencyValueInterface instead.
      *
      * @return ValueInterface
      */
-    public function getBalance(): ?ValueInterface;
+    public function getBalance(): ValueInterface;
 
     /**
      * Attach a transaction to the wallet
      *
-     * If no currency was provided for the wallet and the given
-     *   transaction has a currency associated, it SHOULD convert the wallet to
-     *   the same currency as the transaction.
+     * If a transaction with a currency associated was given to an empty wallet
+     *   that has no currency associated, it MAY convert the wallet to the
+     *   same currency as the transaction.
      *
-     * If a transaction with no currency associated was given, and the wallet
-     *   have a currency associated, it SHOULD convert the transaction to
-     *   the same currency as the wallet before attach.
+     * If a given transaction not share the same currency as the wallet,
+     *   this method MUST throw a CurrencyExceptionInterface.
      *
-     * If a currency was provided for the wallet and the transaction have
-     *   a different currency it SHOULD throw an CurrencyExceptionInterface.
+     * This method SHOULD NOT automatically convert any transaction value
+     *   before attach to the wallet.
      *
      * @param TransactionInterface $transaction
      *
@@ -69,7 +65,7 @@ interface WalletInterface
     /**
      * Returns a list of attached transactions of this wallet
      *
-     * @return \Iterator It SHOULD return only TransactionInterface for each iterated value
+     * @return \Iterator It MUST return only TransactionInterface for each iterated value
      */
     public function getTransactions(): \Iterator;
 }
