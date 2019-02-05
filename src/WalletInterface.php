@@ -1,9 +1,17 @@
-<?php
+<?php declare(strict_types=1);
+/*
+ * This file is part of coisa/wallet.
+ *
+ * (c) Felipe Sayão Lobato Abreu <github@felipeabreu.com.br>
+ *
+ * This source file is subject to the license that is bundled
+ * with this source code in the file LICENSE.
+ */
 
 namespace CoiSA\Wallet;
 
-use CoiSA\Wallet\Currency\CurrencyInterface;
 use CoiSA\Wallet\Currency\CurrencyExceptionInterface;
+use CoiSA\Wallet\Currency\CurrencyInterface;
 use CoiSA\Wallet\Transaction\TransactionInterface;
 
 /**
@@ -26,7 +34,7 @@ interface WalletInterface
      * If you don't want use currencies, you MAY implement only ValueInterface instead.
      * If the implementation don't rely on currencies this method MUST return null.
      *
-     * @return CurrencyInterface|null
+     * @return null|CurrencyInterface
      */
     public function getCurrency(): ?CurrencyInterface;
 
