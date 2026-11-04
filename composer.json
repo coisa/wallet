@@ -2,7 +2,7 @@
     "name": "coisa/wallet",
     "description": "Common interface for Wallets",
     "keywords": ["wallet","financial","currency"],
-    "homepage": "https://github.com/coisa/wallet",
+    "homepage": "https://github.com/artificenerd/wallet",
     "license": "MIT",
     "authors": [
         {
